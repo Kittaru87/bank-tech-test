@@ -15,7 +15,11 @@ describe Account do
   end
 
   describe '#deposit' do
-
+    
+    it 'can deposit some money into the account' do
+      account.deposit(100)
+      expect(account.balance).to eq(100)
+    end
 
   end
 
