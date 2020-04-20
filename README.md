@@ -61,5 +61,10 @@ $ account = Account.new
 $ account.deposit(100.00)
 => [#<Transaction:0x00007fdc021fcdf0 @date="20/04/20", @credit="100.00", @debit=0, @balance="100.00">] 
 
+$ account.withdraw(50.00)
+=> [#<Transaction:0x00007fa460949588 @date="20/04/20", @credit="100.00", @debit=0, @balance="100.00">, #<Transaction:0x00007fa460959000 @date="20/04/20", @credit=0, @debit="50.00", @balance="50.00">] 
 
 ```
+
+### edge cases
+* Should the user be able to withdraw money when they have 0 balance?
