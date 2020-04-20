@@ -51,23 +51,10 @@ $ require './account.rb'
 => true 
 
 $ account = Account.new
-=> #<Account:0x00007fa0af93f858 @balance=0, @history=[]> 
+=> #<Account:0x00007fdc021ecf90 @balance=0, @history=[], @transaction=Transaction> 
 
-$ account.deposit(1000.00)
-=> [["10/01/2020 || 1000.00 || || 1000.00"]] 
-
-
+$ account.deposit(100.00)
+=> [#<Transaction:0x00007fdc021fcdf0 @date="20/04/20", @credit="100.00", @debit=0, @balance="100.00">] 
 
 
-$ account.deposit(2000.00)
-=> [["10/01/2020 || 1000.00 || || 1000.00"], ["13/01/2020 || 2000.00 || || 3000.00"]] 
-
-$ account.withdraw(500.00)
-=> [["10/01/2020 || 1000.00 || || 1000.00"], ["13/01/2020 || 2000.00 || || 3000.00"], ["14/01/2020 || || 500.00 || 2500.00"]] 
-
-$ account.print
-date || credit || debit || balance
-14/01/2020 || || 500.00 || 2500.00
-13/01/2020 || 2000.00 || || 3000.00
-10/01/2020 || 1000.00 || || 1000.00
 ```

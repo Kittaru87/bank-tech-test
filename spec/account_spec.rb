@@ -15,13 +15,21 @@ describe Account do
   end
 
   describe '#deposit' do
-    
-    it 'can deposit some money into the account' do
+
+    before(:each) do
       account.deposit(100.00)
+    end
+
+    it 'can deposit some money into the account' do
       expect(account.balance).to eq(100.00)
     end
 
+    it 'will populate the history with the deposit' do
+      expect(account.history).to include{"@credit='100.00'"}
+    end
+
   end
+
 
 end
 
