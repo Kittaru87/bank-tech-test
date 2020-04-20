@@ -2,7 +2,14 @@
 
 Makers Week 10 Individual Challenges
 
+**Tech used**
+
+Language: ruby
+Testing: rspec
+Linting: rubocop
+
 ## Specification
+Write a program that can be used by irb to simulate a user's interaction with their bank account.
 
 ### Requirements
 
@@ -22,3 +29,28 @@ date || credit || debit || balance
 14/01/2012 || || 500.00 || 2500.00
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
+
+
+### irb test
+```
+$ require './bank.rb'
+=> true 
+
+$ account = Account.new
+=> #<Account:0x00007fa0af93f858 @balance=0, @statement=[]> 
+
+$ account.deposit(1000.00, '10/01/2020')
+=> [["10/01/2020 || 1000.00 || || 1000.00"]] 
+
+$ account.deposit(2000.00, '13/01/2020')
+=> [["10/01/2020 || 1000.00 || || 1000.00"], ["13/01/2020 || 2000.00 || || 3000.00"]] 
+
+$ account.withdraw(500.00, '14/01/2020')
+=> [["10/01/2020 || 1000.00 || || 1000.00"], ["13/01/2020 || 2000.00 || || 3000.00"], ["14/01/2020 || || 500.00 || 2500.00"]] 
+
+$ account.print
+date || credit || debit || balance
+14/01/2020 || || 500.00 || 2500.00
+13/01/2020 || 2000.00 || || 3000.00
+10/01/2020 || 1000.00 || || 1000.00
+```

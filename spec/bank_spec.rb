@@ -26,9 +26,10 @@ describe Account do
     expect(@account).to have_attributes(statement: [['10/01/2020 || 1000.00 || || 1000.00'], ['14/01/2020 || || 500.00 || 500.00']])
   end
 
-  it 'can print a statement of your banking activity' do
+  it 'can prints a statement of your banking activity, one line per transaction' do
     @account.deposit(2000.00, '13/01/2020')
     @account.withdraw(500.00, '14/01/2020')
-    expect(@account.print).to eq("date || credit || debit || balance\n14/01/2012 || || 500.00 || 2500.00\n13/01/2012 || 2000.00 || || 3000.00\n10/01/2012 || 1000.00 || || 1000.00")
+    expect{@account.print}.to output("date || credit || debit || balance\n14/01/2020 || || 500.00 || 2500.00\n13/01/2020 || 2000.00 || || 3000.00\n10/01/2020 || 1000.00 || || 1000.00\n").to_stdout
   end
 end
+
