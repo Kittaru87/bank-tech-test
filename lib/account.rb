@@ -13,11 +13,17 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @history << [@transaction.new(credit: '%.2f' % amount, balance: format('%.2f', @balance))]
+    @history << @transaction.new(credit: format('%.2f', amount), balance: format('%.2f', @balance))
   end
 
   def withdraw(amount)
     @balance -= amount
-    @history << [@transaction.new(debit: '%.2f' % amount, balance: format('%.2f', @balance))]
+    @history << @transaction.new(debit: format('%.2f', amount), balance: format('%.2f', @balance))
   end
+
+  private
+
+
+
+
 end
