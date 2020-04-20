@@ -21,5 +21,5 @@ class Account
     @history << @transaction.new(debit: format('%.2f', amount), balance: format('%.2f', @balance))
   end
 
-  private
+  
 end
