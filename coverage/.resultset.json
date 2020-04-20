@@ -94,6 +94,40 @@
           null
         ]
       },
+      "/Users/sbell/Documents/Makers/tech-tests/Bank-TT/spec/statement_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/sbell/Documents/Makers/tech-tests/Bank-TT/lib/statement.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/sbell/Documents/Makers/tech-tests/Bank-TT/spec/transaction_spec.rb": {
         "lines": [
           null,
@@ -122,6 +156,6 @@
         ]
       }
     },
-    "timestamp": 1587394714
+    "timestamp": 1587403531
   }
 }
