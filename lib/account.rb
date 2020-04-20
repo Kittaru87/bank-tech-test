@@ -22,8 +22,4 @@ class Account
   end
 
   private
-
-
-
-
 end
