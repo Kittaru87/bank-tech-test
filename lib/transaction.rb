@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require_relative 'account'
 
 class Transaction
-
   attr_reader :date, :credit, :debit, :balance
 
   def initialize(date: Time, credit: 0, debit: 0, balance: 0)
@@ -9,8 +10,5 @@ class Transaction
     @credit = credit
     @debit = debit
     @balance = balance
-  end 
-
-
-
+  end
 end

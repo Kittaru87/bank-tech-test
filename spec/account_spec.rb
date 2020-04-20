@@ -3,7 +3,6 @@
 require 'account'
 
 describe Account do
-  
   let(:account) { described_class.new }
 
   it 'initializes with an empty balance' do
@@ -15,21 +14,35 @@ describe Account do
   end
 
   describe '#deposit' do
-
-    before(:each) do
-      account.deposit(100.00)
-    end
-
     it 'can deposit some money into the account' do
+      account.deposit(100.00)
       expect(account.balance).to eq(100.00)
     end
 
     it 'will populate the history with the deposit' do
-      expect(account.history).to include{"@credit='100.00'"}
+      transaction = double('transaction')
+      allow(transaction).to receive(:new).with(credit: '100.00', balance: '100.00') { transaction }
+      account = Account.new(transaction)
+      account.deposit(100.00)
+      expect(account.history).to include([transaction])
     end
-
   end
 
+  describe '#withdraw' do
+    it 'can withdraw some money from the account' do
+      account.deposit(100.00)
+      account.withdraw(50.00)
+      expect(account.balance).to eq(50.00)
+    end
 
+    it 'will populate the history with the withdrawal' do
+      transaction = double('transaction')
+      allow(transaction).to receive(:new).with(credit: '100.00', balance: '100.00') { transaction }
+      allow(transaction).to receive(:new).with(debit: '50.00', balance: '50.00') { transaction }
+      account = Account.new(transaction)
+      account.deposit(100.00)
+      account.withdraw(50.00)
+      expect(account.history).to include([transaction], [transaction])
+    end
+  end
 end
-

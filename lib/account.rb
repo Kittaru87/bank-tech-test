@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require_relative "transaction"
+
+require_relative 'transaction'
 
 class Account
   attr_reader :balance, :history, :transaction
@@ -12,8 +13,11 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @history << @transaction.new(credit: '%.2f' % amount, balance: '%.2f' % @balance)
+    @history << [@transaction.new(credit: '%.2f' % amount, balance: format('%.2f', @balance))]
   end
 
- 
+  def withdraw(amount)
+    @balance -= amount
+    @history << [@transaction.new(debit: '%.2f' % amount, balance: format('%.2f', @balance))]
+  end
 end

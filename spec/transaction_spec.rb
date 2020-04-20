@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require 'transaction'
 
 describe Transaction do
-
   let(:transaction) { described_class.new }
 
   it 'initializes with the current date' do
-    expect(transaction.date).to eq("#{Time.now.strftime('%d/%m/%y')}") 
+    expect(transaction.date).to eq(Time.now.strftime('%d/%m/%y').to_s)
   end
 
   it 'initializes with no credit' do
@@ -19,5 +20,4 @@ describe Transaction do
   it 'initializes with 0 on balance' do
     expect(transaction.balance).to eq(0)
   end
-
 end
