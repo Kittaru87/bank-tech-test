@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require_relative "transaction"
 
 class Account
   attr_reader :balance, :history
@@ -12,4 +13,5 @@ class Account
     @balance += amount
   end
 
+ 
 end
