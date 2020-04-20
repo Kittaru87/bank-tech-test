@@ -8,32 +8,16 @@
           1,
           null,
           1,
-          1,
-          4,
           null,
+          3,
           null,
           1,
-          0,
-          0,
+          1,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
           1,
-          0,
-          0,
-          0,
           null,
-          null,
-          1,
-          0,
-          0,
-          0,
           null,
           null,
           null
@@ -47,37 +31,24 @@
           1,
           null,
           1,
-          0,
-          0,
+          2,
+          2,
           null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
           null,
           null
         ]
+      },
+      "/Users/sbell/Documents/Makers/tech-tests/Bank-TT/spec/statement_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "/Users/sbell/Documents/Makers/tech-tests/Bank-TT/spec/transaction_spec.rb": {
+        "lines": [
+
+        ]
       }
     },
-    "timestamp": 1587384723
+    "timestamp": 1587386199
   }
 }

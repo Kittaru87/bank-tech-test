@@ -34,10 +34,6 @@ date || credit || debit || balance
 ```
 As a customer
 So that I can save money
-I wish to open a bank account in my name
-
-As a customer
-So that I can save money
 I want to be able to deposit money into my account
 
 As a customer
@@ -51,14 +47,17 @@ I want to be able to see a printed statement of my withdrawals and deposits (new
 
 ### irb test
 ```
-$ require './bank.rb'
+$ require './account.rb'
 => true 
 
 $ account = Account.new
-=> #<Account:0x00007fa0af93f858 @balance=0, @statement=[]> 
+=> #<Account:0x00007fa0af93f858 @balance=0, @history=[]> 
 
 $ account.deposit(1000.00)
 => [["10/01/2020 || 1000.00 || || 1000.00"]] 
+
+
+
 
 $ account.deposit(2000.00)
 => [["10/01/2020 || 1000.00 || || 1000.00"], ["13/01/2020 || 2000.00 || || 3000.00"]] 
