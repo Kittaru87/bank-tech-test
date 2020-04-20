@@ -9,7 +9,12 @@ class Statement
   end
 
   def print
+
    puts "date || credit || debit || balance\n"
+   
+    @history.reverse.each do |transaction|
+      puts "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}"
+    end
   end
 
 end
