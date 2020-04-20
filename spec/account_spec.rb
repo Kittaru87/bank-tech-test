@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-require 'bank'
+require 'account'
 
 describe Account do
   before(:each) do
     @account = Account.new
-    @account.deposit(1000.00, '10/01/2020')
   end
 
   it 'can accept a deposit of £1000 on 10 January 2020' do
