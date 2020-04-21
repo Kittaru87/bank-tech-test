@@ -43,7 +43,6 @@ describe Account do
     it 'will not allow you to withdraw cash if the withdrawal amount takes you past 0' do
       expect { account.withdraw(101.00) }.to raise_error 'Insufficient funds'
     end
-
   end
 
   it 'will populate the history with a deposit and/or withdrawal' do

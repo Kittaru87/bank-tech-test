@@ -13,13 +13,13 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    add_to_history(amount, "credit")
+    add_to_history(amount, 'credit')
   end
 
   def withdraw(amount)
     funds?(amount)
     @balance -= amount
-    add_to_history(amount, "debit")
+    add_to_history(amount, 'debit')
   end
 
   private
@@ -33,11 +33,10 @@ class Account
   end
 
   def add_to_history(amount, transaction)
-    if transaction == "credit"
+    if transaction == 'credit'
       @history << @transaction.new(credit: decimal_format(amount), balance: decimal_format(@balance))
     else
       @history << @transaction.new(debit: decimal_format(amount), balance: decimal_format(@balance))
     end
   end
-
 end
