@@ -51,7 +51,7 @@ I want to be able to see a printed statement of my withdrawals and deposits (new
 ```
 ### Model
 
-!![Bank Tech Test Model](tech-tests/Bank-TT/public/bank-tt-model.jpg)
+![Bank Tech Test Model](./public/bank-tt-model.jpg)
 
 ## Installation instructions
 
