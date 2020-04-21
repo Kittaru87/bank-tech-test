@@ -73,7 +73,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
   rubocop
   simplecov
   simplecov-console
