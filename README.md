@@ -69,7 +69,7 @@ I want to be able to see a printed statement of my withdrawals and deposits (new
 $ require './account.rb'
 => true 
 
-$ require './statememt.rb'
+$ require './statement.rb'
 => true 
 
 $ account = Account.new
