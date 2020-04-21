@@ -71,8 +71,6 @@
           3,
           3,
           null,
-          null,
-          null,
           null
         ]
       },
@@ -96,10 +94,11 @@
       },
       "/Users/sbell/Documents/Makers/tech-tests/Bank-TT/spec/statement_spec.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
+          1,
           1,
           1,
           2,
@@ -110,20 +109,18 @@
           1,
           1,
           1,
-          3,
           2,
-          null,
-          null,
           null,
           null
         ]
       },
       "/Users/sbell/Documents/Makers/tech-tests/Bank-TT/lib/statement.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
+          1,
           1,
           null,
           1,
@@ -131,13 +128,19 @@
           null,
           null,
           1,
-          null,
           2,
           null,
           2,
           2,
+          2,
+          2,
           null,
           null,
+          null,
+          1,
+          null,
+          1,
+          4,
           null,
           null
         ]
@@ -170,6 +173,6 @@
         ]
       }
     },
-    "timestamp": 1587405455
+    "timestamp": 1587459948
   }
 }

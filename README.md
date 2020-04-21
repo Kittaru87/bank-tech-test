@@ -8,7 +8,7 @@ Language: ruby
 
 Testing: rspec
 
-Linting: rubocop, simplecov
+Linting: rubocop, simplecov (100% coverage)
 
 ## Specification
 Write a program that can be used by irb to simulate a user's interaction with their bank account.
@@ -49,10 +49,25 @@ As a customer
 So I may have a better understanding of my financial outgoings
 I want to be able to see a printed statement of my withdrawals and deposits (newest first)
 ```
+### Model
+
+!![Bank Tech Test Model](/Users/sbell/Documents/Makers/tech-tests/Bank-TT/public/bank-tt-model.jpg)
+
+## Installation instructions
+
+* git clone https://github.com/Kittaru87/bank-tech-test.git
+* cd bank-tech-test
+* `bundle install` - install gem file
+* `rspec --init` - initialize rspec
+* `rspec` to run test suite
+* This software runs in irb (or Ruby REPL of choice run through the terminal)
 
 ### irb test
 ```
 $ require './account.rb'
+=> true 
+
+$ require './statememt.rb'
 => true 
 
 $ account = Account.new
@@ -64,6 +79,13 @@ $ account.deposit(100.00)
 $ account.withdraw(50.00)
 => [#<Transaction:0x00007fa460949588 @date="20/04/20", @credit="100.00", @debit=0, @balance="100.00">, #<Transaction:0x00007fa460959000 @date="20/04/20", @credit=0, @debit="50.00", @balance="50.00">] 
 
+$ statement = Statement.new(account.history)
+ => #<Statement:0x00007fbe3fa524e0 @history=[#<Transaction:0x00007fbe400b6570 @date="21/04/20", @credit="100.00", @debit=0, @balance="100.00">, #<Transaction:0x00007fbe3fa5b130 @date="21/04/20", @credit=0, @debit="50.00", @balance="50.00">]> 
+
+$ statement.print
+date || credit || debit || balance
+21/04/20 ||  || 50.00 || 50.00
+21/04/20 || 100.00 ||  || 100.00
 ```
 
 ### edge cases
