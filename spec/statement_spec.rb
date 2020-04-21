@@ -4,7 +4,6 @@ require 'timecop'
 require 'statement'
 
 describe Statement do
-
   let(:account) { Account.new }
 
   it 'prints a blank statement when no transactions have been made' do

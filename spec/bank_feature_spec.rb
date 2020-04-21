@@ -4,9 +4,8 @@ require 'account'
 require 'statement'
 
 describe 'A user can interact with their bank account' do
-
   let(:account) { Account.new }
-  let(:statement) {Statement.new(account.history)}
+  let(:statement) { Statement.new(account.history) }
 
   before(:each) do
     @date = Time.now.strftime('%d/%m/%Y')
