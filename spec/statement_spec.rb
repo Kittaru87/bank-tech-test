@@ -17,6 +17,6 @@ describe Statement do
       account.withdraw(50.00)
     end
     statement = Statement.new(account.history)
-    expect { statement.print }.to output("date || credit || debit || balance\n20/04/20 ||  || 50.00 || 50.00\n19/04/20 || 100.00 ||  || 100.00\n").to_stdout
+    expect { statement.print }.to output("date || credit || debit || balance\n20/04/2020 ||  || 50.00 || 50.00\n19/04/2020 || 100.00 ||  || 100.00\n").to_stdout
   end
 end
