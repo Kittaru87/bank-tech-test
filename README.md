@@ -2,6 +2,8 @@
 
 Makers Week 10 Individual Challenges
 
+[![Build Status](https://travis-ci.com/Kittaru87/bank-tech-test.svg?branch=master)](https://travis-ci.com/Kittaru87/bank-tech-test)
+
 **Tech used**
 
 Language: ruby
