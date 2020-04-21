@@ -13,13 +13,13 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @history << @transaction.new(credit: format('%.2f', amount), balance: format('%.2f', @balance))
+    @history << @transaction.new(credit: decimal_format(amount), balance: decimal_format(@balance))
   end
 
   def withdraw(amount)
     @balance -= amount
     funds?(amount)
-    @history << @transaction.new(debit: format('%.2f', amount), balance: format('%.2f', @balance))
+    @history << @transaction.new(debit: decimal_format(amount), balance: decimal_format(@balance))
   end
 
   private
@@ -27,4 +27,9 @@ class Account
   def funds?(amount)
     raise 'Insufficient funds' if (@balance - amount).negative?
   end
+
+  def decimal_format(amount)
+    format('%.2f', amount)
+  end
+
 end
