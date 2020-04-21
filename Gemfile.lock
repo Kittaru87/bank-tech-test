@@ -70,6 +70,7 @@ GEM
     simplecov-html (0.12.2)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
+    timecop (0.9.1)
     travis (1.8.13)
       backports
       faraday (~> 0.9)
@@ -92,6 +93,7 @@ DEPENDENCIES
   rubocop
   simplecov
   simplecov-console
+  timecop
   travis
 
 BUNDLED WITH

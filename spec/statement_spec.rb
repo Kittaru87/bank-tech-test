@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'timecop'
 require 'statement'
 
 describe Statement do
@@ -10,9 +10,13 @@ describe Statement do
 
   it 'prints a statement' do
     account = Account.new
-    account.deposit(100.00)
-    account.withdraw(50.00)
+    Timecop.freeze(2020, 04, 19, 0, 0, 0) do
+      account.deposit(100.00)
+    end
+    Timecop.freeze(2020, 04, 20, 0, 0 , 0) do
+      account.withdraw(50.00)
+    end
     statement = Statement.new(account.history)
-    expect { statement.print }.to output("date || credit || debit || balance\n#{Time.now.strftime('%d/%m/%y')} ||  || 50.00 || 50.00\n#{Time.now.strftime('%d/%m/%y')} || 100.00 ||  || 100.00\n").to_stdout
+    expect { statement.print }.to output("date || credit || debit || balance\n20/04/20 ||  || 50.00 || 50.00\n19/04/20 || 100.00 ||  || 100.00\n").to_stdout
   end
 end
