@@ -26,11 +26,10 @@ describe Account do
   end
 
   describe '#withdraw' do
-
     before(:each) do
       account.deposit(100.00)
     end
-    
+
     it 'can withdraw some money from the account' do
       account.withdraw(50.00)
       expect(account.balance).to eq(50.00)
@@ -42,7 +41,7 @@ describe Account do
     end
 
     it 'will not allow you to withdraw cash if the withdrawal amount takes you past 0' do
-      expect{account.withdraw(101.00)}.to raise_error "Insufficient funds"
+      expect { account.withdraw(101.00) }.to raise_error 'Insufficient funds'
     end
   end
 
@@ -55,5 +54,4 @@ describe Account do
     account.withdraw(50.00)
     expect(account.history).to include(transaction, transaction)
   end
-
 end

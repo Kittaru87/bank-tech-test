@@ -3,3 +3,4 @@
 gem 'rubocop'
 gem 'simplecov'
 gem 'simplecov-console'
+gem 'travis'

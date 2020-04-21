@@ -18,14 +18,13 @@ class Account
 
   def withdraw(amount)
     @balance -= amount
-    has_funds?(amount)
+    funds?(amount)
     @history << @transaction.new(debit: format('%.2f', amount), balance: format('%.2f', @balance))
   end
 
   private
 
-  def has_funds?(amount)
-    raise "Insufficient funds" if (@balance - amount) < 0
+  def funds?(amount)
+    raise 'Insufficient funds' if (@balance - amount).negative?
   end
-
 end
