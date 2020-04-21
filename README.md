@@ -8,7 +8,7 @@ Makers Week 10 Individual Challenges
 
 Language: ruby
 
-Testing: rspec
+Testing: rspec, travis
 
 Linting: rubocop, simplecov (100% coverage)
 
