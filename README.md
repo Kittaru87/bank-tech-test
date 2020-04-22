@@ -102,15 +102,4 @@ Following a review it was suggested that I move the balance calculation to the s
   * The balance in the statement class will have to be reset each time the balance is printed, otherwise the statement will take the last final balance amount as the first balance amount the next time it is printed.
   * Balance in account should be changed to current_balance to differentiate it from the balance calculated in the statement.
 
-
-
-require './account.rb'
-require './statement.rb'
-account = Account.new
-account.deposit(50.00)
-account.withdraw(30.00)
-statement = Statement.new(account.history)
-statement.print_statement
-
-account.deposit(50.00)
-statement.print_statement
+Tests all pass.

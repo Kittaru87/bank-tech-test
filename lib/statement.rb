@@ -32,8 +32,7 @@ class Statement
   end
 
   def calculate_balance(credit, debit)
-    @balance += credit if credit.to_i > 0
-    @balance -= debit if debit.to_i > 0
+    credit.to_i > 0 ? @balance += credit : @balance -= debit 
   end
 
   def reset_balance
