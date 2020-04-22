@@ -6,7 +6,7 @@ describe Account do
   let(:account) { described_class.new }
 
   it 'initializes with an empty balance' do
-    expect(account).to have_attributes(balance: 0)
+    expect(account).to have_attributes(current_balance: 0)
   end
 
   it 'initializes with an empty history' do
@@ -16,12 +16,12 @@ describe Account do
   describe '#deposit' do
     it 'can deposit some money into the account' do
       account.deposit(100.00)
-      expect(account.balance).to eq(100.00)
+      expect(account.current_balance).to eq(100.00)
     end
 
     it 'can deposit money with change into the account' do
       account.deposit(96.48)
-      expect(account.balance).to eq(96.48)
+      expect(account.current_balance).to eq(96.48)
     end
   end
 
@@ -32,12 +32,12 @@ describe Account do
 
     it 'can withdraw some money from the account' do
       account.withdraw(50.00)
-      expect(account.balance).to eq(50.00)
+      expect(account.current_balance).to eq(50.00)
     end
 
     it 'can withdraw some money with change from the account' do
       account.withdraw(37.48)
-      expect(account.balance).to eq(62.52)
+      expect(account.current_balance).to eq(62.52)
     end
 
     it 'will not allow you to withdraw cash if the withdrawal amount takes you past 0' do
@@ -47,8 +47,8 @@ describe Account do
 
   it 'will populate the history with a deposit and/or withdrawal' do
     transaction = double('transaction')
-    allow(transaction).to receive(:new).with(credit: '100.00') { transaction }
-    allow(transaction).to receive(:new).with(debit: '50.00') { transaction }
+    allow(transaction).to receive(:new).with(credit: 100.0) { transaction }
+    allow(transaction).to receive(:new).with(debit: 50.0) { transaction }
     account = Account.new(transaction)
     account.deposit(100.00)
     account.withdraw(50.00)

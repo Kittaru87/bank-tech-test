@@ -13,13 +13,13 @@ describe 'A user can interact with their bank account' do
 
   it 'can deposit some money into the account' do
     account.deposit(100.00)
-    expect(account.balance).to eq(100.00)
+    expect(account.current_balance).to eq(100.00)
   end
 
   it 'can withdraw some money from the account' do
     account.deposit(100.00)
     account.withdraw(50.00)
-    expect(account.balance).to eq(50.00)
+    expect(account.current_balance).to eq(50.00)
   end
 
   it 'can print a statment' do

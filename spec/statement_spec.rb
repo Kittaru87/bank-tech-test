@@ -6,20 +6,16 @@ require 'statement'
 describe Statement do
   let(:account) { Account.new }
 
-  it 'initializes with 0 on balance' do
-    expect(subject.balance).to eq(0)
-  end
-  
   it 'prints a blank statement when no transactions have been made' do
     blank = Statement.new([])
     expect { blank.print_statement }.to output("date || credit || debit || balance\n").to_stdout
   end
 
   it 'prints a statement' do
-    Timecop.freeze(2020, 0o4, 19, 0, 0, 0) do
+    Timecop.freeze(2020, 04, 19, 0, 0, 0) do
       account.deposit(100.00)
     end
-    Timecop.freeze(2020, 0o4, 20, 0, 0, 0) do
+    Timecop.freeze(2020, 04, 20, 0, 0, 0) do
       account.withdraw(50.00)
     end
     statement = Statement.new(account.history)

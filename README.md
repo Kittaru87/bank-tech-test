@@ -84,7 +84,7 @@ $ account.withdraw(50.00)
 $ statement = Statement.new(account.history)
  => #<Statement:0x00007fbe3fa524e0 @history=[#<Transaction:0x00007fbe400b6570 @date="21/04/20", @credit="100.00", @debit=0, @balance="100.00">, #<Transaction:0x00007fbe3fa5b130 @date="21/04/20", @credit=0, @debit="50.00", @balance="50.00">]> 
 
-$ statement.print
+$ statement.print_statement
 date || credit || debit || balance
 21/04/20 ||  || 50.00 || 50.00
 21/04/20 || 100.00 ||  || 100.00
@@ -92,7 +92,15 @@ date || credit || debit || balance
 
 ### edge cases and further development
 * Should the user be able to withdraw money when they have 0 balance?
-* Following a review it was suggested that I move the balance calculation to the statement class as most banking apps do not store any current balance but rather calculate balance on the fly whenever it is requested. I've started to do this in a branch called 'handling-balance' - it currently works but the issue is not allowing the balance to dip below 0 if the balance is being calculated from scratch each time in the statement.
+
+## Further development 
+
+Following a review it was suggested that I move the balance calculation to the statement class as most banking apps do not store any current balance but rather calculate balance on the fly whenever it is requested. I've started to do this in a branch called 'handling-balance'. Issues faced with this method:
+
+  * Not allowing the balance to dip below 0. If the balance is being calculated from scratch each time in the statement then the current balance will need to be stored in the account still in order for the error to be raised when you try to withdraw too much money.
+  * I will have to move the decimal_format method from the account to the statement - this could be refactored with the removing_nil method I already have in there.
+  * The balance in the statement class will have to be reset each time the balance is printed, otherwise the statement will take the last final balance amount as the first balance amount the next time it is printed.
+  * Balance in account should be changed to current_balance to differentiate it from the balance calculated in the statement.
 
 
 
