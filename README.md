@@ -14,7 +14,7 @@ Linting: rubocop, simplecov (100% coverage)
 
 [Specification](#Specification) | [Planning](#Planning) | [Installation instructions](#Installation-instructions) | [Running tests](#Running-tests) | [Further development](#Further-development) 
 
-## `Specification`
+## Specification
 Write a program that can be used by irb to simulate a user's interaction with their bank account.
 
 ### Requirements
@@ -62,13 +62,13 @@ I want to be able to see a printed statement of my withdrawals and deposits (new
 
 ![Bank Tech Test Model](./public/bank-tt-model.jpg)
 
-## `Installation instructions`
+## Installation instructions
 
 * git clone https://github.com/Kittaru87/bank-tech-test.git
 * cd bank-tech-test
 * `bundle install` - install gem file
 
-## `Running tests`
+## Running tests
 
 * `rspec --init` - initialize rspec
 * `rspec` to run test suite
@@ -100,7 +100,7 @@ date || credit || debit || balance
 21/04/20 || 100.00 ||  || 100.00
 ```
 
-## `Further development` 
+## Further development
 
 Following a review it was suggested that I move the balance calculation to the statement class as most banking apps do not store any current balance but rather calculate balance on the fly whenever it is requested. I've started to do this in a branch called 'handling-balance'. 
 
