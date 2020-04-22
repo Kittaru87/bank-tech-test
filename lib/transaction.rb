@@ -3,12 +3,11 @@
 require_relative 'account'
 
 class Transaction
-  attr_reader :date, :credit, :debit, :balance
+  attr_reader :date, :credit, :debit
 
-  def initialize(date: Time, credit: 0, debit: 0, balance: 0)
+  def initialize(date: Time, credit: 0, debit: 0)
     @date = date.now.strftime('%d/%m/%Y')
     @credit = credit
     @debit = debit
-    @balance = balance
   end
 end

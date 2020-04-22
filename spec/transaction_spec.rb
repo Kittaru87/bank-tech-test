@@ -17,7 +17,4 @@ describe Transaction do
     expect(transaction.debit).to eq(0)
   end
 
-  it 'initializes with 0 on balance' do
-    expect(transaction.balance).to eq(0)
-  end
 end

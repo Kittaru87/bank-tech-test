@@ -47,8 +47,8 @@ describe Account do
 
   it 'will populate the history with a deposit and/or withdrawal' do
     transaction = double('transaction')
-    allow(transaction).to receive(:new).with(credit: '100.00', balance: '100.00') { transaction }
-    allow(transaction).to receive(:new).with(debit: '50.00', balance: '50.00') { transaction }
+    allow(transaction).to receive(:new).with(credit: '100.00') { transaction }
+    allow(transaction).to receive(:new).with(debit: '50.00') { transaction }
     account = Account.new(transaction)
     account.deposit(100.00)
     account.withdraw(50.00)

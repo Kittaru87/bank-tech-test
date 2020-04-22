@@ -28,15 +28,11 @@ class Account
     raise 'Insufficient funds' if (@balance - amount).negative?
   end
 
-  def decimal_format(amount)
-    format('%.2f', amount)
-  end
-
   def add_to_history(amount, transaction)
     if transaction == 'credit'
-      @history << @transaction.new(credit: decimal_format(amount), balance: decimal_format(@balance))
+      @history << @transaction.new(credit: amount)#, balance: decimal_format(@balance))
     else
-      @history << @transaction.new(debit: decimal_format(amount), balance: decimal_format(@balance))
+      @history << @transaction.new(debit: amount)#, balance: decimal_format(@balance))
     end
   end
 end

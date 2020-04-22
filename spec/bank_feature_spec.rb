@@ -27,6 +27,6 @@ describe 'A user can interact with their bank account' do
     account.withdraw(50.00)
     printed_statement = "date || credit || debit || balance\n#{@date} ||  || 50.00 || 50.00\n#{@date} || 100.00 ||  || 100.00\n"
 
-    expect { statement.print }.to output(printed_statement).to_stdout
+    expect { statement.print_statement }.to output(printed_statement).to_stdout
   end
 end

@@ -90,5 +90,19 @@ date || credit || debit || balance
 21/04/20 || 100.00 ||  || 100.00
 ```
 
-### edge cases
+### edge cases and further development
 * Should the user be able to withdraw money when they have 0 balance?
+* Following a review it was suggested that I move the balance calculation to the statement class as most banking apps do not store any current balance but rather calculate balance on the fly whenever it is requested. I've started to do this in a branch called 'handling-balance' - it currently works but the issue is not allowing the balance to dip below 0 if the balance is being calculated from scratch each time in the statement.
+
+
+
+require './account.rb'
+require './statement.rb'
+account = Account.new
+account.deposit(50.00)
+account.withdraw(30.00)
+statement = Statement.new(account.history)
+statement.print_statement
+
+account.deposit(50.00)
+statement.print_statement
