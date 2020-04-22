@@ -4,15 +4,7 @@ Makers Week 10 Individual Challenges
 
 [![Build Status](https://travis-ci.com/Kittaru87/bank-tech-test.svg?branch=master)](https://travis-ci.com/Kittaru87/bank-tech-test)
 
-**Tech used**
-
-Language: ruby
-
-Testing: rspec, travis
-
-Linting: rubocop, simplecov (100% coverage)
-
-[Specification](#Specification) | [Planning](#Planning) | [Installation instructions](#Installation-instructions) | [Running tests](#Running-tests) | [Further development](#Further-development) 
+[Specification](#Specification) | [Planning](#Planning) | [Installation instructions](#Installation-instructions) | [Running tests](#Running-tests) | [Further development](#Further-development) | [Tech stack](#Tech-stack)
 
 ## Specification
 Write a program that can be used by irb to simulate a user's interaction with their bank account.
@@ -112,7 +104,15 @@ Issues faced with this method:
 
   * Not allowing the balance to dip below 0. If the balance is being calculated from scratch each time in the statement then the current balance will need to be stored in the account still in order for the error to be raised when you try to withdraw too much money.
   * I will have to move the decimal_format method from the account to the statement - this could be refactored with the removing_nil method I already have in there.
-  * The balance in the statement class will have to be reset each time the balance is printed, otherwise the statement will take the last final balance amount as the first balance amount the next time it is printed.
+  * The balance in the statement class will have to be reset each time the balance is printed, otherwise the statement will take the last final balance amount as the first balance amount the next time it is printed. [I was able to refactor this method away by moving the balance variable into the add_statement method.]
   * Balance in account should be changed to current_balance to differentiate it from the balance calculated in the statement.
 
 Tests all pass.
+
+## Tech stack
+
+**Language:** ruby
+
+**Testing:** rspec, travis
+
+**Linting:** rubocop, simplecov (100% coverage)

@@ -12,10 +12,10 @@ describe Statement do
   end
 
   it 'prints a statement' do
-    Timecop.freeze(2020, 04, 19, 0, 0, 0) do
+    Timecop.freeze(2020, 0o4, 19, 0, 0, 0) do
       account.deposit(100.00)
     end
-    Timecop.freeze(2020, 04, 20, 0, 0, 0) do
+    Timecop.freeze(2020, 0o4, 20, 0, 0, 0) do
       account.withdraw(50.00)
     end
     statement = Statement.new(account.history)

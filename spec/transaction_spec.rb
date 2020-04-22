@@ -16,5 +16,4 @@ describe Transaction do
   it 'initializes with no debit' do
     expect(transaction.debit).to eq(0)
   end
-
 end

@@ -29,10 +29,10 @@ class Account
   end
 
   def add_to_history(amount, transaction)
-    if transaction == 'credit'
-      @history << @transaction.new(credit: amount)
-    else
-      @history << @transaction.new(debit: amount)
-    end
+    @history << if transaction == 'credit'
+                  @transaction.new(credit: amount)
+                else
+                  @transaction.new(debit: amount)
+                end
   end
 end
