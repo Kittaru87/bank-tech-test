@@ -12,7 +12,9 @@ Testing: rspec, travis
 
 Linting: rubocop, simplecov (100% coverage)
 
-## Specification
+[Specification](#Specification) | [Planning](#Planning) | [Installation instructions](#Installation-instructions) | [Running tests](#Running-tests) | [Further development](#Further-development) 
+
+## `Specification`
 Write a program that can be used by irb to simulate a user's interaction with their bank account.
 
 ### Requirements
@@ -37,6 +39,11 @@ date || credit || debit || balance
 
 10/01/2012 || 1000.00 || || 1000.00
 
+### Edge cases
+* Should the user be able to withdraw money when they have 0 balance?
+
+## Planning
+
 ### user stories
 ```
 As a customer
@@ -55,11 +62,14 @@ I want to be able to see a printed statement of my withdrawals and deposits (new
 
 ![Bank Tech Test Model](./public/bank-tt-model.jpg)
 
-## Installation instructions
+## `Installation instructions`
 
 * git clone https://github.com/Kittaru87/bank-tech-test.git
 * cd bank-tech-test
 * `bundle install` - install gem file
+
+## `Running tests`
+
 * `rspec --init` - initialize rspec
 * `rspec` to run test suite
 * This software runs in irb (or Ruby REPL of choice run through the terminal)
@@ -90,12 +100,15 @@ date || credit || debit || balance
 21/04/20 || 100.00 ||  || 100.00
 ```
 
-### edge cases and further development
-* Should the user be able to withdraw money when they have 0 balance?
+## `Further development` 
 
-## Further development 
+Following a review it was suggested that I move the balance calculation to the statement class as most banking apps do not store any current balance but rather calculate balance on the fly whenever it is requested. I've started to do this in a branch called 'handling-balance'. 
 
-Following a review it was suggested that I move the balance calculation to the statement class as most banking apps do not store any current balance but rather calculate balance on the fly whenever it is requested. I've started to do this in a branch called 'handling-balance'. Issues faced with this method:
+### Updated model
+
+![Bank Tech Test Model 2](./public/bank-tt-model-2.jpg)
+
+Issues faced with this method:
 
   * Not allowing the balance to dip below 0. If the balance is being calculated from scratch each time in the statement then the current balance will need to be stored in the account still in order for the error to be raised when you try to withdraw too much money.
   * I will have to move the decimal_format method from the account to the statement - this could be refactored with the removing_nil method I already have in there.
