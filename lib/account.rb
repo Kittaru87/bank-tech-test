@@ -3,7 +3,7 @@
 require_relative 'transaction'
 
 class Account
-  attr_reader :current_balance, :history, :transaction
+  attr_reader :history, :transaction
 
   def initialize(transaction = Transaction)
     @history = []

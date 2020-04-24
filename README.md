@@ -1,4 +1,4 @@
-# Bank Tech Test
+# Bank Tech Test - Ruby
 
 Makers Week 10 Individual Challenges
 
