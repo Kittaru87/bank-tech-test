@@ -78,18 +78,24 @@ $ account = Account.new
 => #<Account:0x00007fdc021ecf90 @balance=0, @history=[], @transaction=Transaction> 
 
 $ account.deposit(100.00)
-=> [#<Transaction:0x00007fdc021fcdf0 @date="20/04/20", @credit="100.00", @debit=0, @balance="100.00">] 
+=> [#<Transaction:0x00007fdc021fcdf0 @date="20/04/20", @credit="100.00", @debit=0] 
 
 $ account.withdraw(50.00)
-=> [#<Transaction:0x00007fa460949588 @date="20/04/20", @credit="100.00", @debit=0, @balance="100.00">, #<Transaction:0x00007fa460959000 @date="20/04/20", @credit=0, @debit="50.00", @balance="50.00">] 
+=> [#<Transaction:0x00007fa460949588 @date="20/04/20", @credit="100.00", @debit=0>, #<Transaction:0x00007fa460959000 @date="20/04/20", @credit=0, @debit="50.00">] 
 
-$ statement = Statement.new(account.history)
- => #<Statement:0x00007fbe3fa524e0 @history=[#<Transaction:0x00007fbe400b6570 @date="21/04/20", @credit="100.00", @debit=0, @balance="100.00">, #<Transaction:0x00007fbe3fa5b130 @date="21/04/20", @credit=0, @debit="50.00", @balance="50.00">]> 
-
-$ statement.print_statement
+$ account.summary
 date || credit || debit || balance
-21/04/20 ||  || 50.00 || 50.00
-21/04/20 || 100.00 ||  || 100.00
+20/04/20 ||  || 50.00 || 50.00
+20/04/20 || 100.00 ||  || 100.00
+
+$ account.deposit(40.00)
+=> [#<Transaction:0x00007fdc021fspr0 @date="21/04/20", @credit="40.00", @debit=0>]
+
+$ account.summary
+date || credit || debit || balance
+21/04/20 || 40.00 ||  || 90.00
+20/04/20 ||  || 50.00 || 50.00
+20/04/20 || 100.00 ||  || 100.00
 ```
 
 ## Further development

@@ -3,11 +3,12 @@
 require_relative 'transaction'
 
 class Account
-  attr_reader :history, :transaction
+  attr_reader :history, :transaction, :statement
 
-  def initialize(transaction = Transaction)
+  def initialize(transaction = Transaction, statement = Statement)
     @history = []
     @transaction = transaction
+    @statement = statement
   end
 
   def deposit(amount)
@@ -16,6 +17,10 @@ class Account
 
   def withdraw(amount)
     add_to_history(amount, 'debit')
+  end
+
+  def summary
+    @statement.new(@history).print_statement
   end
 
   private
